@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="{% static 'css/buttony.css' %}" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Add Sneakers</title>
+</head>
+<body style='background-color: rgb(245,245,245)'>
+<a href="/products/"><button class="custom-btn btn-3"><span>Return to products</span></button></a>
+    <center>
+    <form action="/add_sneakers/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Add Sneakers">
+    </form>
+ {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+     <li><a href="/sneakers/"><button class="custom-btn btn-3"><span>List of orders</span></button></a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+  </ul>
+
+
+    </center>
+
+
+</body>
+</html>

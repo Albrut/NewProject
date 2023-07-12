@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="{% static 'css/buttony.css' %}" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title> Registration page</title>
+</head>
+<body>
+<a href="/main/"><button class="custom-btn btn-3"><span>Return to main page</span></button></a>
+<center>
+    <a href="/accounts/login/"><button class="custom-btn btn-3"><span>Login</span></button></a>
+    <a href="/accounts/logout/"><button class="custom-btn btn-3"><span>Logout</span></button></a>
+    <a href="/accounts/password_change/"><button class="custom-btn btn-3"><span>Change password</span></button></a>
+    <a href="/accounts/password_reset/"><button class="custom-btn btn-3"><span>Reset password</span></button></a>
+</center>
+</body>
+</html>
